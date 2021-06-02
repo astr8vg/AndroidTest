@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.administrator.widgettest_319hz.MainActivity"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="显示文本"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_weight="0.06" />
+
+    <EditText
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="输入文本"
+        android:ems="10"
+        android:id="@+id/editText" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/xietengfei1"
+            android:id="@+id/imageView"
+            android:layout_weight="0.69" />
+
+        <Button
+            android:text="Button"
+            android:layout_width="106dp"
+            android:layout_height="45dp"
+            android:id="@+id/button2" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="127dp"
+        app:srcCompat="@drawable/myselector"
+        android:id="@+id/imageButton"
+        android:background="@drawable/xxx"
+        android:layout_weight="0.28" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:text="男"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton5"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="女"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton4"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RadioGroup>
+
+    <Button
+        android:text="获取性别"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_weight="0.06" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:text="篮球"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox3" />
+
+        <CheckBox
+            android:text="足球"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox" />
+
+        <CheckBox
+            android:text="游泳"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox2" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="获取兴趣"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_weight="0.06" />
+
+</LinearLayout>
