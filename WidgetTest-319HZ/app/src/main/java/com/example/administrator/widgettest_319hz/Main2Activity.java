@@ -13,21 +13,21 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener{
     private Button btnclose;
-    private TextView textView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        Intent intent = getIntent();
-        String str=intent.getStringExtra("param1");
-        int n = intent.getIntExtra("param2",111);
-        System.out.println("------"+str+"------"+String.valueOf(n));
-        Toast.makeText(this,str+"------"+String.valueOf(n), Toast.LENGTH_SHORT).show();
-        TextView tv=(TextView)findViewById(R.id.textView2);
-        tv.setText(str+"------"+String.valueOf(n));
+        private TextView textView;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main2);
+            Intent intent = getIntent();
+            String str=intent.getStringExtra("param1");
+            int n = intent.getIntExtra("param2",111);
+            System.out.println("------"+str+"------"+String.valueOf(n));
+            Toast.makeText(this,str+"------"+String.valueOf(n), Toast.LENGTH_SHORT).show();
+            TextView tv=(TextView)findViewById(R.id.textView2);
+            tv.setText(str+"------"+String.valueOf(n));
 
-        Button btnclose=(Button)findViewById(R.id.button3);
-        btnclose.setOnClickListener(this);
+            Button btnclose=(Button)findViewById(R.id.button3);
+            btnclose.setOnClickListener(this);
 
 
     }
