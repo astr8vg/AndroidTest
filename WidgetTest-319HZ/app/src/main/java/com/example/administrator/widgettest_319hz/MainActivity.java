@@ -2,18 +2,19 @@ package com.example.administrator.widgettest_319hz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.BoolRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView textView;
     private EditText editText;
     private Button Button1,Button2,Button4,Button5;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView ImageView;
     private RadioButton radioButtonnan, radioButtonnv;
     private CheckBox checkfootball,checkbasketball,checksswim;
+    private RadioGroup rg;
+    private String strfun="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +47,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         checkbasketball=(CheckBox)findViewById(R.id.checkBox3);
         ImageView=(ImageView)findViewById(R.id.imageView);
         ImageButton=(ImageButton)findViewById(R.id.imageButton);
+        rg=(RadioGroup)findViewById(R.id.radioGroup);
         //设置按钮监听器
         Button1.setOnClickListener(this);
         Button2.setOnClickListener(this);
         ImageButton.setOnClickListener(this);
         Button4.setOnClickListener(this);
         Button5.setOnClickListener(this);
+        checkfootball.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    strfun+="football+";
+                else
+                    strfun=strfun.replace("football+","");
+                textView.setText(strfun);
+            }
+        });
+        checksswim.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    strfun+="swim+";
+                else
+                    strfun=strfun.replace("swim+","");
+                textView.setText(strfun);
+            }
+        });
+        checkbasketball.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    strfun+="basketball+";
+                else
+                    strfun=strfun.replace("basketball+","");
+                    textView.setText(strfun);
+
+            }
+        });
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.radioButton5:
+                        textView.setText("man");
+                        break;
+                    case R.id.radioButton4:
+                        textView.setText("woman");
+                        break;
+                }
+            }
+        });
+
     }
 
     @Override
